@@ -1,14 +1,19 @@
+"use client";
+
+import { useTheme } from "next-themes";
+
 interface PickcartProps {
   width: string;
   height: string;
-  color: string;
 }
 
 export function Pickcart({
   width = "805",
   height = "192",
-  color = "black",
 }: Partial<PickcartProps>) {
+  const { resolvedTheme } = useTheme();
+  const color = resolvedTheme === "dark" ? "white" : "black";
+
   return (
     <svg
       width={width}
