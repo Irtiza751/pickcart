@@ -5,7 +5,7 @@ import { StringifyOptions } from "querystring";
 interface ProductProps {
   featured?: boolean;
   name: string;
-  price: string;
+  price: number;
   image?: string;
   inStock?: boolean;
 }
@@ -44,10 +44,10 @@ export function Product({
       <div className="absolute bottom-5 left-5 w-full">
         <Button
           variant="outline"
-          className="rounded-full backdrop-blur-md gap-2"
+          className="rounded-full backdrop-blur-md gap-2 max-w-xs"
         >
-          <span>{name}</span>
-          <small className={`bg-blue-600 px-2 rounded-full`}>Rs {price}</small>
+          <span>{name.length < 20 ? name : name.substring(0, 20) + "..."}</span>
+          <small className={`bg-blue-600 px-2 rounded-full`}>{price} $</small>
         </Button>
       </div>
     </article>
