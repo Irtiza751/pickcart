@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { StringifyOptions } from "querystring";
 
 interface ProductProps {
   featured?: boolean;
@@ -21,7 +20,7 @@ export function Product({
     <article
       className={`border border-input p-5 rounded-lg ${
         featured ? "col-span-2" : ""
-      } relative h-[30rem]`}
+      } relative h-[30rem] group`}
     >
       <Image
         src={image || "/images/jacket.webp"}
@@ -30,6 +29,7 @@ export function Product({
         loading="lazy"
         sizes="100%"
         fill
+        className="group-hover:scale-105 ease-in duration-200"
       />
 
       <div className="inline-flex items-center gap-2 justify-center whitespace-nowrap rounded-full border border-input bg-background shadow-sm px-4 py-1">
@@ -44,10 +44,12 @@ export function Product({
       <div className="absolute bottom-5 left-5 w-full">
         <Button
           variant="outline"
-          className="rounded-full backdrop-blur-md gap-2 max-w-xs"
+          className="rounded-full backdrop-blur-md gap-2"
         >
-          <span>{name.length < 20 ? name : name.substring(0, 20) + "..."}</span>
-          <small className={`bg-blue-600 px-2 rounded-full`}>{price} $</small>
+          <span className="max-w-56 text-ellipsis overflow-hidden">{name}</span>
+          <small className={`bg-blue-600  px-2 rounded-full text-white`}>
+            Rs {price}
+          </small>
         </Button>
       </div>
     </article>

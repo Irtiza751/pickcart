@@ -10,7 +10,7 @@ export interface Product {
 }
 
 export default async function Home() {
-  const response = await request("/products");
+  const response = await request("/products?limit=10");
   const products: Product[] = await response.json();
 
   return (
