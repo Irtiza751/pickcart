@@ -1,0 +1,20 @@
+{
+  "name": "pickcart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "clean": "turbo run clean",
+    "publish": "turbo run build lint test && changeset version && changeset publish"
+  },
+  "keywords": [],
+  "author": "Muhammad Irtiza",
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.7",
+    "turbo": "^2.1.1"
+  }
+}
