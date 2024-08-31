@@ -4,7 +4,7 @@ import { Search, ShoppingCart } from "lucide-react";
 
 export function Navbar() {
   return (
-    <header className="container py-4">
+    <header className="container py-4 sticky top-0 z-10 shadow-sm bg-background">
       <nav className="grid grid-cols-3">
         <div>
           <Pickcart width="130" height="32" />
