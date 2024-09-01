@@ -20,7 +20,7 @@ export function Navbar() {
         </form>
 
         <div className="justify-self-end">
-          <Button variant="outline" className="gap-1">
+          <Button variant="outline" size="icon" className="gap-1">
             <ShoppingCart size={15} />
           </Button>
         </div>

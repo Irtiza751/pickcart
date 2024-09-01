@@ -27,7 +27,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
+          <main className="h-full full-screen">{children}</main>
           <footer className="py-4 text-center border-t mt-4 flex justify-center">
             <Pickcart width="120" height="30" />
           </footer>
