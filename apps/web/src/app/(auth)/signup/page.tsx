@@ -18,8 +18,8 @@ export default function SignupPage() {
       </CardHeader>
       <CardContent>
         <form className="space-y-4">
-          <div>
-            <label htmlFor="username" className="text-sm mb-1 block">
+          <div className="space-y-3">
+            <label htmlFor="username" className="text-sm block">
               Username
             </label>
             <Input
@@ -28,8 +28,8 @@ export default function SignupPage() {
               placeholder="Enter you username"
             />
           </div>
-          <div>
-            <label htmlFor="email" className="text-sm mb-1 block">
+          <div className="space-y-3">
+            <label htmlFor="email" className="text-sm block">
               Email
             </label>
             <Input
@@ -39,11 +39,8 @@ export default function SignupPage() {
               placeholder="Enter you email"
             />
           </div>
-          <div>
-            <label
-              htmlFor="password"
-              className="text-sm mb-1 flex justify-between"
-            >
+          <div className="space-y-3">
+            <label htmlFor="password" className="text-sm flex justify-between">
               Password
               <Link className="underline" href="/">
                 Forgot password?

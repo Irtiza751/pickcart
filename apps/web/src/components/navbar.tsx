@@ -1,14 +1,15 @@
 import { Pickcart } from "@/components/logo";
 import { Button } from "./ui/button";
 import { Search, ShoppingCart } from "lucide-react";
+import Link from "next/link";
 
 export function Navbar() {
   return (
     <header className="container py-4 sticky top-0 z-10 shadow-sm bg-background">
       <nav className="grid grid-cols-3">
-        <div>
+        <Link href="/" className="block">
           <Pickcart width="130" height="32" />
-        </div>
+        </Link>
 
         <form className="flex rounded-md border border-input shadow-sm items-center px-3">
           <input
