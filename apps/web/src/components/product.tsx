@@ -28,10 +28,9 @@ export function Product({
           className="absolute top-5"
         />
         <Image
-          className="group-hover:scale-105 ease-in duration-200"
+          className="group-hover:scale-105 ease-in duration-200 object-cover"
           src={image || "/images/jacket.webp"}
           alt="Jacket"
-          objectFit="contain"
           sizes="500"
           fill
           priority
