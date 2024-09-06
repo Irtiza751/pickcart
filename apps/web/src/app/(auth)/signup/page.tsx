@@ -10,25 +10,37 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function LoginPage() {
+export default function SignupPage() {
   return (
     <Card className="max-w-lg w-full mx-auto">
       <CardHeader>
-        <CardTitle className="text-xl">Login to your account</CardTitle>
+        <CardTitle className="text-2xl">Register your account</CardTitle>
       </CardHeader>
       <CardContent>
         <form className="space-y-4">
-          <div>
-            <label htmlFor="email" className="text-sm mb-1 block">
+          <div className="space-y-3">
+            <label htmlFor="username" className="text-sm block">
+              Username
+            </label>
+            <Input
+              name="useranme"
+              id="username"
+              placeholder="Enter you username"
+            />
+          </div>
+          <div className="space-y-3">
+            <label htmlFor="email" className="text-sm block">
               Email
             </label>
-            <Input name="email" id="email" placeholder="Enter you email" />
+            <Input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter you email"
+            />
           </div>
-          <div>
-            <label
-              htmlFor="password"
-              className="text-sm mb-1 flex justify-between"
-            >
+          <div className="space-y-3">
+            <label htmlFor="password" className="text-sm flex justify-between">
               Password
               <Link className="underline" href="/">
                 Forgot password?
@@ -45,8 +57,8 @@ export default function LoginPage() {
           <Image src="/images/google.svg" alt="Google" width={18} height={18} />
           <span>Continue with Google</span>
         </Button>
-        <Link href="/signup" className="underline">
-          Don&apos;t have an account
+        <Link href="/login" className="underline">
+          Already have an account
         </Link>
       </CardFooter>
     </Card>
