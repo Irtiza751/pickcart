@@ -41,6 +41,7 @@ export function Product({
           <Button
             variant="outline"
             className="rounded-full backdrop-blur-md gap-2"
+            title={name}
           >
             <span className="max-w-56 text-ellipsis overflow-hidden">
               {name}
