@@ -28,7 +28,7 @@ export function Product({
           className="absolute top-5"
         />
         <Image
-          className="group-hover:scale-105 ease-in duration-200 object-cover"
+          className="group-hover:scale-105 ease-in duration-200 object-contain"
           src={image || "/images/jacket.webp"}
           alt="Jacket"
           sizes="500"
@@ -37,19 +37,19 @@ export function Product({
         />
       </CardContent>
       <CardFooter>
-        <Button
-          variant="outline"
-          className="rounded-full backdrop-blur-md gap-2"
-        >
-          <Link href={`/${encodeURI(name)}`}>
+        <Link href={`/${encodeURI(name)}`}>
+          <Button
+            variant="outline"
+            className="rounded-full backdrop-blur-md gap-2"
+          >
             <span className="max-w-56 text-ellipsis overflow-hidden">
               {name}
             </span>
             <small className={`bg-blue-600  px-2 rounded-full text-white`}>
               Rs {price}
             </small>
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );
