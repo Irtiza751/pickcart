@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardFooter } from "./ui/card";
 import { Chip } from "./ui/chip";
+import Link from "next/link";
 
 interface ProductProps {
   featured?: boolean;
@@ -27,10 +28,9 @@ export function Product({
           className="absolute top-5"
         />
         <Image
-          className="group-hover:scale-105 ease-in duration-200"
+          className="group-hover:scale-105 ease-in duration-200 object-cover"
           src={image || "/images/jacket.webp"}
           alt="Jacket"
-          objectFit="contain"
           sizes="500"
           fill
           priority
@@ -41,10 +41,14 @@ export function Product({
           variant="outline"
           className="rounded-full backdrop-blur-md gap-2"
         >
-          <span className="max-w-56 text-ellipsis overflow-hidden">{name}</span>
-          <small className={`bg-blue-600  px-2 rounded-full text-white`}>
-            Rs {price}
-          </small>
+          <Link href={`/${encodeURI(name)}`}>
+            <span className="max-w-56 text-ellipsis overflow-hidden">
+              {name}
+            </span>
+            <small className={`bg-blue-600  px-2 rounded-full text-white`}>
+              Rs {price}
+            </small>
+          </Link>
         </Button>
       </CardFooter>
     </Card>
