@@ -21,35 +21,34 @@ export function Product({
 }: ProductProps) {
   return (
     <Card className={featured ? "col-span-2" : ""}>
-      <CardContent className="relative h-[30rem]">
+      <CardContent className="relative h-[30rem] overflow-hidden">
         <Chip
           variant={inStock ? "success" : "danger"}
           text="Out of stock"
           className="absolute top-5"
         />
         <Image
-          className="group-hover:scale-105 ease-in duration-200 object-cover"
           src={image || "/images/jacket.webp"}
           alt="Jacket"
+          priority
           sizes="500"
           fill
-          priority
+          className="object-contain"
         />
       </CardContent>
       <CardFooter>
-        <Button
-          variant="outline"
-          className="rounded-full backdrop-blur-md gap-2"
-        >
-          <Link href={`/${encodeURI(name)}`}>
-            <span className="max-w-56 text-ellipsis overflow-hidden">
-              {name}
-            </span>
+        <Link href={`/${encodeURI(name)}`}>
+          <Button
+            variant="outline"
+            className="rounded-full backdrop-blur-md gap-2"
+            title={name}
+          >
+            <span className="max-w-56 truncate">{name}</span>
             <small className={`bg-blue-600  px-2 rounded-full text-white`}>
               Rs {price}
             </small>
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );
